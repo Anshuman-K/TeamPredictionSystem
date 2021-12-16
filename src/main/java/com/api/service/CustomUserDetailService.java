@@ -44,7 +44,7 @@ public class CustomUserDetailService implements UserDetailsService {
 	public String signUpUser(RegisteredUserDTO registeredUserDTO) {
 		boolean userNameExists = registeredUserRepository.findById(registeredUserDTO.getUserName()).isPresent();
 		if(userNameExists) {
-			throw new IllegalStateException("UserName Already Taken");
+			 return "UserName Already Taken";
 		}
 				
 		registeredUserDTO.setPassword(this.bCryptPasswordEncoder.encode(registeredUserDTO.getPassword()));

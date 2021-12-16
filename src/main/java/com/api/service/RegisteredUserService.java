@@ -1,8 +1,12 @@
 package com.api.service;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.time.LocalDateTime;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.api.DTO.AppUserRole;
@@ -12,8 +16,10 @@ import com.api.entity.RegisteredUserEntity;
 import com.api.repository.RegisteredUserRepository;
 import com.api.token.ConfirmationToken;
 import com.api.token.ConfirmationTokenService;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 @Service
+@ConfigurationProperties()
 public class RegisteredUserService {
 	@Autowired
 	private RegisteredUserRepository registeredUserRepository;
@@ -29,11 +35,14 @@ public class RegisteredUserService {
 	
 	@Autowired
 	private EmailSender emailSender;
-		
+
+	@Value("${baseurl}")
+	String baseurladdress;
+
 	public String createUser(RegisteredUserDTO data) {
 		boolean isValidEmail = emailValidator.test(data.getEmail());
 		if(!isValidEmail) {
-			throw new IllegalStateException("Email Not Valid");
+			return "Email Not Valid/ Already Exists";
 		}
 		String token = customUserDetailService.signUpUser(new RegisteredUserDTO(
 				data.getUserName(),
@@ -42,8 +51,8 @@ public class RegisteredUserService {
 				data.getEmail(),
 				AppUserRole.ROLE_USER
 				));
-		
-		String link = "http://localhost:8400/api/v1/register/confirm?token=" + token;
+
+		String link = baseurladdress + "/api/v1/register/confirm?token=" + token;
         emailSender.send(
         		data.getEmail(),
                 buildEmail(data.getName(), link));

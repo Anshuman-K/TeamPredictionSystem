@@ -1,0 +1,22 @@
+baseurl=
+server.port=8400
+spring.datasource.url =
+spring.datasource.username =
+spring.datasource.password =
+spring.jpa.properties.hibernate.dialect =
+spring.jpa.hibernate.ddl-auto=
+spring.datasource.driver-class-name=
+spring.jpa.show-sql=
+
+
+spring.mail.host =
+spring.mail.port =
+spring.mail.username =
+spring.mail.password =
+spring.mail.properties.mail.smtp.auth =
+spring.mail.properties.mail.smtp.starttls.enable =
+##spring.mail.properties.mail.smtp.ssl.trust =
+spring.mail.properties.mail.smtp.ssl.trust=
+spring.mail.properties.mail.smtp.connectiontimeout =
+spring.mail.properties.mail.smtp.timeout =
+spring.mail.properties.mail.smtp.writetimeout =

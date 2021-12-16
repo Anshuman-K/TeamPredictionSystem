@@ -32,8 +32,7 @@ public class RegisteredUserController {
 		RegisteredUserDTO data = registeredUserService.getUser(userName);
 		return new ResponseEntity<RegisteredUserDTO>(data, HttpStatus.OK);
 	}
-	
-	//http://localhost:8400/api/v1/register/confirm?token=a2564c0e-d7c4-4815-86ff-3c7addea8096
+
 	@GetMapping("/confirm")
 	public String confirm(@RequestParam("token") String token) {
 		return registeredUserService.confirmToken(token);
