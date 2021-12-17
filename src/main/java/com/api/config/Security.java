@@ -43,6 +43,7 @@ public class Security extends WebSecurityConfigurerAdapter {
 		.antMatchers("/api/v*/login/**").permitAll()
 		.antMatchers("/api/v*/register/**").permitAll()
 		.antMatchers("/api/v*/test/**").permitAll()
+		.antMatchers("/").permitAll()
 		//.antMatchers(HttpMethod.POST,"/api/v*/register/**").permitAll()
 		//.antMatchers(HttpMethod.OPTIONS,"/**").permitAll()
 		//.antMatchers("/api/v*/mqtt/**").hasRole("ADMIN")
