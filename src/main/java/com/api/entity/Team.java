@@ -1,6 +1,7 @@
 package com.api.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,12 +22,12 @@ public class Team {
     private String teamName;
 
     @ManyToMany
-    @JsonManagedReference
+    @JsonIgnore
     @JoinTable(name = "Player_Team",joinColumns = @JoinColumn(name = "team_Id"), inverseJoinColumns = @JoinColumn(name = "player_Id"))
     private List<Player> players = new ArrayList<>();
 
     @ManyToMany(mappedBy = "teams")
-    @JsonBackReference
+    @JsonIgnore
     private List<CricketMatch> cricketMatch = new ArrayList<>();
 
     public void addPlayer(Player player){
