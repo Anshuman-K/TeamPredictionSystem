@@ -43,9 +43,8 @@ public class League {
 	}
 	
 	
-	public League(int leagueId, String leagueName, Format format, boolean isDomestic) {
+	public League( String leagueName, Format format, boolean isDomestic) {
 		super();
-		this.leagueId = leagueId;
 		this.leagueName = leagueName;
 		this.format = format;
 		this.isDomestic = isDomestic;

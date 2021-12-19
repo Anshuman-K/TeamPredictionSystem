@@ -21,8 +21,7 @@ public class Player {
     private List<Team> teams = new ArrayList<>();
 
     public Player(){}
-    public Player(int playerId, String playerName, String countryOrigin, String profile) {
-        this.playerId = playerId;
+    public Player(String playerName, String countryOrigin, String profile) {
         this.playerName = playerName;
         this.countryOrigin = countryOrigin;
         this.profile = profile;

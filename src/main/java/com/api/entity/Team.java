@@ -76,9 +76,8 @@ public class Team {
 		return "Team [teamId=" + teamId + ", teamName=" + teamName + ", players=" + players + ", cricketMatch="
 				+ cricketMatch + "]";
 	}
-	public Team(int teamId, String teamName, List<Player> players, List<CricketMatch> cricketMatch) {
+	public Team(String teamName, List<Player> players, List<CricketMatch> cricketMatch) {
 		super();
-		this.teamId = teamId;
 		this.teamName = teamName;
 		this.players = players;
 		this.cricketMatch = cricketMatch;

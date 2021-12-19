@@ -73,9 +73,8 @@ public class CricketMatch {
 		return teams;
 	}
 
-	public CricketMatch(int cricketMatchId, Season season, String venue, Date date, String location) {
+	public CricketMatch(Season season, String venue, Date date, String location) {
 		super();
-		this.cricketMatchId = cricketMatchId;
 		this.season = season;
 		this.venue = venue;
 		this.date = date;

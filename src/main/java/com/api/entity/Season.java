@@ -73,9 +73,8 @@ public class Season {
 		
 	}
 
-	public Season(int seasonId, League league, Date startDate, Date endDate, List<CricketMatch> cricketMatchList) {
+	public Season(League league, Date startDate, Date endDate, List<CricketMatch> cricketMatchList) {
 		super();
-		this.seasonId = seasonId;
 		this.league = league;
 		this.startDate = startDate;
 		this.endDate = endDate;

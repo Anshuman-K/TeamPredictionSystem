@@ -141,12 +141,11 @@ public class Ipldata {
 	public void setBowling_team(String bowling_team) {
 		this.bowling_team = bowling_team;
 	}
-	public Ipldata(int id, int matchId, int inning, int over_num, int ball, String batsman, String non_striker,
+	public Ipldata(int matchId, int inning, int over_num, int ball, String batsman, String non_striker,
 			String bowler, int batsman_runs, int extra_runs, int total_runs, int non_boundary, int is_wicket,
 			String dismissal_kind, String player_dismissed, String fielder, String extras_type, String batting_team,
 			String bowling_team) {
 		super();
-		this.id = id;
 		this.matchId = matchId;
 		this.inning = inning;
 		this.over_num = over_num;

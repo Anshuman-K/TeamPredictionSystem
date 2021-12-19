@@ -70,10 +70,9 @@ public class RecommendationData {
 	public void setWicketsTaken(int wicketsTaken) {
 		this.wicketsTaken = wicketsTaken;
 	}
-	public RecommendationData(int id, String name, int matchId, int runsScored, int ballsFaced, int runsGiven,
+	public RecommendationData(String name, int matchId, int runsScored, int ballsFaced, int runsGiven,
 			int bowled, int wicketsTaken) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.matchId = matchId;
 		this.runsScored = runsScored;

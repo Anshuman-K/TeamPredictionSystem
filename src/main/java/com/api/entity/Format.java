@@ -57,9 +57,8 @@ public class Format {
 		
 	}
 	
-	public Format(int formatId, String formatName, boolean isLimitedOvers, int overs) {
+	public Format(String formatName, boolean isLimitedOvers, int overs) {
 		super();
-		this.formatId = formatId;
 		this.formatName = formatName;
 		this.isLimitedOvers = isLimitedOvers;
 		this.overs = overs;
