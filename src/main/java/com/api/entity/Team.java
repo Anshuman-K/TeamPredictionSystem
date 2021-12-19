@@ -1,20 +1,16 @@
 package com.api.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+//import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+//import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Getter
-@NoArgsConstructor
-@AllArgsConstructor
+
 public class Team {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -48,4 +44,40 @@ public class Team {
     public void setTeamName(String teamName) {
         this.teamName = teamName;
     }
+	public List<Player> getPlayers() {
+		return players;
+	}
+	public void setPlayers(List<Player> players) {
+		this.players = players;
+	}
+	public List<CricketMatch> getCricketMatch() {
+		return cricketMatch;
+	}
+	public void setCricketMatch(List<CricketMatch> cricketMatch) {
+		this.cricketMatch = cricketMatch;
+	}
+	public int getTeamId() {
+		return teamId;
+	}
+	public String getTeamName() {
+		return teamName;
+	}
+	
+	
+	@Override
+	public String toString() {
+		return "Team [teamId=" + teamId + ", teamName=" + teamName + ", players=" + players + ", cricketMatch="
+				+ cricketMatch + "]";
+	}
+	public Team(int teamId, String teamName, List<Player> players, List<CricketMatch> cricketMatch) {
+		super();
+		this.teamId = teamId;
+		this.teamName = teamName;
+		this.players = players;
+		this.cricketMatch = cricketMatch;
+	}
+	public Team() {
+	}
+    
+    
 }

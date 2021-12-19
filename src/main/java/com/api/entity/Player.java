@@ -1,19 +1,13 @@
 package com.api.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
+
 public class Player {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -49,5 +43,42 @@ public class Player {
     }
     public void removeTeam(Team team){
         this.teams.remove(team);
+    }
+
+	public List<Team> getTeams() {
+		return teams;
+	}
+
+	public void setTeams(List<Team> teams) {
+		this.teams = teams;
+	}
+
+	public int getPlayerId() {
+		return playerId;
+	}
+
+	public String getPlayerName() {
+		return playerName;
+	}
+
+	public String getCountryOrigin() {
+		return countryOrigin;
+	}
+
+	public String getProfile() {
+		return profile;
+	}
+
+	public Player(int playerId, String playerName, String countryOrigin, String profile, List<Team> teams) {
+		super();
+		this.playerId = playerId;
+		this.playerName = playerName;
+		this.countryOrigin = countryOrigin;
+		this.profile = profile;
+		this.teams = teams;
+	}
+    
+    public Player() {
+    	
     }
 }
