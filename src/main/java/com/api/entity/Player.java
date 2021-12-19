@@ -5,15 +5,13 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.security.core.parameters.P;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
 public class Player {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,6 +23,14 @@ public class Player {
     @ManyToMany(mappedBy = "players")
     @JsonBackReference
     private List<Team> teams = new ArrayList<>();
+
+    public Player(){}
+    public Player(int playerId, String playerName, String countryOrigin, String profile) {
+        this.playerId = playerId;
+        this.playerName = playerName;
+        this.countryOrigin = countryOrigin;
+        this.profile = profile;
+    }
 
     public void setPlayerId(int playerId) {
         this.playerId = playerId;
@@ -50,4 +56,22 @@ public class Player {
     public void removeTeam(Team team){
         this.teams.remove(team);
     }
+
+    public int getPlayerId() {
+        return playerId;
+    }
+
+    public String getPlayerName() {
+        return playerName;
+    }
+
+    public String getCountryOrigin() {
+        return countryOrigin;
+    }
+
+    public String getProfile() {
+        return profile;
+    }
+
+
 }

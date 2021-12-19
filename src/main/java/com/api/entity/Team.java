@@ -12,9 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Getter
-@NoArgsConstructor
-@AllArgsConstructor
 public class Team {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,6 +26,14 @@ public class Team {
     @ManyToMany(mappedBy = "teams")
     @JsonIgnore
     private List<CricketMatch> cricketMatch = new ArrayList<>();
+
+    public Team(){
+
+    }
+    public Team(int teamId, String teamName) {
+        this.teamId = teamId;
+        this.teamName = teamName;
+    }
 
     public void addPlayer(Player player){
         this.players.add(player);
@@ -47,5 +52,21 @@ public class Team {
 
     public void setTeamName(String teamName) {
         this.teamName = teamName;
+    }
+
+    public int getTeamId() {
+        return teamId;
+    }
+
+    public String getTeamName() {
+        return teamName;
+    }
+
+    public List<Player> getPlayers() {
+        return players;
+    }
+
+    public List<CricketMatch> getCricketMatch() {
+        return cricketMatch;
     }
 }
