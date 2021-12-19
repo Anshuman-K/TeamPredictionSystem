@@ -27,6 +27,8 @@ public class CricketMatch {
     @JoinTable(name = "Team_CricketMatch",joinColumns = @JoinColumn(name = "cricketMatch_Id"), inverseJoinColumns = @JoinColumn(name = "team_Id"))
     private List<Team> teams = new ArrayList<>();
 
+
+
 	public int getCricketMatchId() {
 		return cricketMatchId;
 	}
@@ -71,23 +73,25 @@ public class CricketMatch {
 		return teams;
 	}
 
-	public void setTeams(List<Team> teams) {
-		this.teams = teams;
-	}
-
-	public CricketMatch(int cricketMatchId, Season season, String venue, Date date, String location, List<Team> teams) {
+	public CricketMatch(int cricketMatchId, Season season, String venue, Date date, String location) {
 		super();
 		this.cricketMatchId = cricketMatchId;
 		this.season = season;
 		this.venue = venue;
 		this.date = date;
 		this.location = location;
-		this.teams = teams;
 	}
 
 	public CricketMatch() {
 
 	}
     
-    
+
+    public void addTeams(Team teams) {
+        this.teams.add(teams);
+    }
+    public void removeTeams(Team team){
+        this.teams.remove(team);
+    }
+
 }

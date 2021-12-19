@@ -28,8 +28,8 @@ public class Ipldata {
     private String extras_type;
     private String batting_team;
     private String bowling_team;
-    
-    
+
+        
 	public int getId() {
 		return id;
 	}
@@ -182,5 +182,5 @@ public class Ipldata {
 				+ ", batting_team=" + batting_team + ", bowling_team=" + bowling_team + "]";
 	}
     
-	
+
 }

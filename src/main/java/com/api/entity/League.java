@@ -59,8 +59,4 @@ public class League {
 		return "League [leagueId=" + leagueId + ", leagueName=" + leagueName + ", format=" + format + ", isDomestic="
 				+ isDomestic + "]";
 	}
-	
-	
-	
-
 }

@@ -20,6 +20,14 @@ public class Player {
     @JsonBackReference
     private List<Team> teams = new ArrayList<>();
 
+    public Player(){}
+    public Player(int playerId, String playerName, String countryOrigin, String profile) {
+        this.playerId = playerId;
+        this.playerName = playerName;
+        this.countryOrigin = countryOrigin;
+        this.profile = profile;
+    }
+
     public void setPlayerId(int playerId) {
         this.playerId = playerId;
     }
@@ -45,12 +53,9 @@ public class Player {
         this.teams.remove(team);
     }
 
+
 	public List<Team> getTeams() {
 		return teams;
-	}
-
-	public void setTeams(List<Team> teams) {
-		this.teams = teams;
 	}
 
 	public int getPlayerId() {
@@ -68,17 +73,5 @@ public class Player {
 	public String getProfile() {
 		return profile;
 	}
-
-	public Player(int playerId, String playerName, String countryOrigin, String profile, List<Team> teams) {
-		super();
-		this.playerId = playerId;
-		this.playerName = playerName;
-		this.countryOrigin = countryOrigin;
-		this.profile = profile;
-		this.teams = teams;
-	}
     
-    public Player() {
-    	
-    }
 }

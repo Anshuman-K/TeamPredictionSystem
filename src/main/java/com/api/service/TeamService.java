@@ -31,7 +31,7 @@ public class TeamService {
 
     public Team findTeamById(int teamId) {
         Optional<Team> team = teamRepository.findById(teamId);
-        if (team.isEmpty()) return new Team();
+        if (team.isEmpty()) return null;
         return team.get();
     }
 

@@ -26,6 +26,7 @@ public class Season {
     @JsonManagedReference
     private List<CricketMatch> cricketMatchList = new ArrayList<>();
 
+
 	public int getSeasonId() {
 		return seasonId;
 	}
@@ -61,11 +62,7 @@ public class Season {
 	public List<CricketMatch> getCricketMatchList() {
 		return cricketMatchList;
 	}
-
-	public void setCricketMatchList(List<CricketMatch> cricketMatchList) {
-		this.cricketMatchList = cricketMatchList;
-	}
-
+	
 	@Override
 	public String toString() {
 		return "Season [seasonId=" + seasonId + ", league=" + league + ", startDate=" + startDate + ", endDate="
@@ -84,8 +81,11 @@ public class Season {
 		this.endDate = endDate;
 		this.cricketMatchList = cricketMatchList;
 	}
-	
-	
-    
-    
+
+    public void addCricketMatchList(CricketMatch cricketMatchList) {
+        this.cricketMatchList.add(cricketMatchList);
+    }
+    public void removeCricketMatchList(CricketMatch cricketMatchList) {
+        this.cricketMatchList.remove(cricketMatchList);
+    }
 }

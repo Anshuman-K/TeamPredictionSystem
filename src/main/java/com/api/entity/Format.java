@@ -12,7 +12,6 @@ public class Format {
 	private String formatName;
     private boolean isLimitedOvers;
     private int overs;
-	
    
 	
 	
@@ -65,8 +64,5 @@ public class Format {
 		this.isLimitedOvers = isLimitedOvers;
 		this.overs = overs;
 	}
-	
-	
-	
 	
 }

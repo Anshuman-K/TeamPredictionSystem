@@ -26,6 +26,11 @@ public class Team {
     @JsonIgnore
     private List<CricketMatch> cricketMatch = new ArrayList<>();
 
+    public Team(int teamId, String teamName) {
+        this.teamId = teamId;
+        this.teamName = teamName;
+    }
+
     public void addPlayer(Player player){
         this.players.add(player);
     }
@@ -44,6 +49,8 @@ public class Team {
     public void setTeamName(String teamName) {
         this.teamName = teamName;
     }
+
+    
 	public List<Player> getPlayers() {
 		return players;
 	}
@@ -79,5 +86,5 @@ public class Team {
 	public Team() {
 	}
     
-    
+
 }

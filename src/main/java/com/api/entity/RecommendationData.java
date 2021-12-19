@@ -19,6 +19,9 @@ public class RecommendationData {
     private int runsGiven;
     private int bowled;
     private int wicketsTaken;
+    
+    
+    
 	public int getId() {
 		return id;
 	}
@@ -90,6 +93,4 @@ public class RecommendationData {
 	}
     
     
-    
-
 }
