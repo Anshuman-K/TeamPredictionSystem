@@ -50,6 +50,7 @@ public class TeamService {
         if (allPlayers.size()==0) return "No Players found";
         try{
             team.get().addPlayer(allPlayers);
+            teamRepository.save(team.get());
             return addedPlayers.toString() +" Players allocated to team";
         }catch (Exception e){
             return "Players allocation failed";

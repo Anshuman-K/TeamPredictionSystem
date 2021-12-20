@@ -18,7 +18,6 @@ public class Team {
     private String teamName;
 
     @ManyToMany
-    @JsonIgnore
     @JoinTable(name = "Player_Team",joinColumns = @JoinColumn(name = "team_Id"), inverseJoinColumns = @JoinColumn(name = "player_Id"))
     private List<Player> players = new ArrayList<>();
 
